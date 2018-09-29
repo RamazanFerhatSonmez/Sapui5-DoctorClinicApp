@@ -1,3 +1,3 @@
-# Sapui5-DoctorClinicApp
+# Sapui5-RentACarApp
 JSON Model,websql
-Doktor ekleme,hasta güncelleme,hasta ekleme...
+Araba ekleme,araba güncelleme,kiralık araçları listeleme.
