@@ -1,0 +1,26 @@
+<mvc:View
+    height="100%"
+    xmlns:mvc="sap.ui.core.mvc"
+    controllerName="rentACar.controller.RentACarList"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.f">
+    <IconTabBar
+        expandable="false"
+        id="idIconTabBar"
+        applyContentPadding="true"
+        stretchContentHeight="true"
+        class="sapUiResponsiveContentPadding">
+        <items>
+            <IconTabFilter
+                count="Kiralık Araç Listesi"
+                iconColor="Positive"
+                design="Horizontal"
+                showAll="true"
+                >
+                    <mvc:XMLView viewName="rentACar.CarRentalListing.view.CarList"></mvc:XMLView>
+            </IconTabFilter>   
+        </items>
+    </IconTabBar>
+</mvc:View>

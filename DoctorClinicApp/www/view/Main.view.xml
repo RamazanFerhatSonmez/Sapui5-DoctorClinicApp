@@ -1,0 +1,14 @@
+
+ <mvc:View
+    height="100%"
+    width="100%"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    controllerName="newProject.controller.Main"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <VBox height="100%" width="100%" alignItems="Center" justifyContent="Center">
+      <Button width="250px" text="Doktor Ekle"  press="addNewDoctor" />
+      <Button width="250px" text="Doktor Listesine Git"  press="goToDoctorList" />
+    </VBox>
+</mvc:View>

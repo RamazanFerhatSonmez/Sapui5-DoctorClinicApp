@@ -1,0 +1,72 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:unf="sap.ui.unified"
+  xmlns:l="sap.ui.layout"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:core="sap.ui.core">
+  <Dialog title = "INFORMATION">
+    <l:Grid defaultSpan = "L12 M12 S12" width = "auto">
+      <l:content>
+        <f:SimpleForm 
+          minWidth="1024"
+          maxContainerCols="2"
+          editable="false"
+          layout="ResponsiveGridLayout"
+          title="Araç Kiralama Düzenleme">
+          <f:content>
+            <VBox>
+              <Image
+                src="{/imageModelDialog}"
+                width="100px"
+                height="100px" >
+              </Image>
+              <VBox>
+               <Label text="Otomabil Markası:" />
+               <Input id = "idUpdateCarBrand"/>
+             </VBox>
+             <VBox>
+               <Label text="Otomabil Modeli:" />
+               <Input id = "idUpdateCarModel"/>                                 
+             </VBox>
+             <VBox>
+               <Label text="Otomabil Kiralama Süresi:" />
+               <ComboBox
+                id="idUpdateCarPeriod"
+                change="comboboxUpdatePeriotSelectId"
+                showSecondaryValues= "true"
+                items="{
+                path: '/rentalPeriodModel'
+
+                }">
+                <core:Item key="{period}" text="{periodText}" />
+              </ComboBox> 
+            </VBox>
+            <VBox>
+             <Label text="Kiralama Ücreti:" />
+             <Input type="Number" id = "idUpdateCArRentalFee"/> 
+
+           </VBox>
+           <VBox>
+             <Label text="Otomabil Kiralama Durumu:" />
+             <ComboBox
+              id="idUpdateCarState"
+              change="comboboxUpdateStateSelectId"
+              showSecondaryValues= "true"
+              items="{
+              path: '/stateCar'
+
+              }">
+              <core:Item key="{state}" text="{stateCarText}" />
+            </ComboBox> 
+          </VBox>
+        </VBox>
+      </f:content>
+    </f:SimpleForm>
+  </l:content>
+</l:Grid>
+<buttons>
+  <Button text = "Kapat" press = "updateCarDialogClose" type = "Reject"/>
+  <Button text = "Güncelle" press = "updateCarToDB" type = "Accept"/>
+</buttons>
+</Dialog>
+</core:FragmentDefinition>

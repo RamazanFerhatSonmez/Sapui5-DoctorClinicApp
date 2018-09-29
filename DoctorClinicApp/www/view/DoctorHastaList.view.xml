@@ -1,0 +1,35 @@
+<mvc:View
+    height="100%"
+    xmlns:mvc="sap.ui.core.mvc"
+    controllerName="newProject.controller.DoctorHastaList"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.f">
+    <IconTabBar
+        expandable="false"
+        id="idIconTabBar"
+        applyContentPadding="true"
+        stretchContentHeight="true"
+        class="sapUiResponsiveContentPadding">
+        <items>
+            <IconTabFilter
+
+                count="DOKTOR BİLGİLERİ"
+                iconColor="Positive"
+                design="Horizontal"
+                showAll="true"
+                >
+                    <mvc:XMLView viewName="newProject.Doktor.view.Doctor"></mvc:XMLView>
+            </IconTabFilter>   
+            <IconTabFilter
+                count="HASTA KAYITLARI"
+                iconColor="Positive"
+                design="Horizontal"
+                showAll="true">
+                    <mvc:XMLView viewName="newProject.Hasta.view.Hasta"></mvc:XMLView>
+            </IconTabFilter>  
+
+        </items>
+    </IconTabBar>
+</mvc:View>

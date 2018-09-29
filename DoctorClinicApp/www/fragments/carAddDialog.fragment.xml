@@ -1,0 +1,90 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:unf="sap.ui.unified"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+    <Dialog title = "INFORMATION">
+        <l:Grid defaultSpan = "L12 M12 S12" width = "auto">
+            <l:content>
+                <f:SimpleForm 
+                    minWidth="1024"
+                    maxContainerCols="2"
+                    editable="false"
+                    layout="ResponsiveGridLayout"
+                    title="Kiralık Araç Ekleme">
+                    <f:content>
+                        <VBox>
+                            <Image
+                                id="imageId"
+                                src="{/imageSrcModel}"
+                                densityAware="false"
+                                width="100px"
+                                height="100px" >
+                                <layoutData>
+                                    <FlexItemData growFactor="1" />
+                                </layoutData>
+                            </Image>
+                            <l:VerticalLayout>
+                                <unf:FileUploader
+                                    id="fileUploaderNewCarAddId"
+                                    />
+                                    <Button
+                                         type="Emphasized"
+                                        text="Resmi Yükle"
+                                        press="handleUploadPress"/>
+                                    </l:VerticalLayout>
+                                    <VBox>
+                                       <Label text="Otomabil Markası:" />
+                                       <Input id = "idNewCarBrandMain"/>
+                                   </VBox>
+                                   <VBox>
+                                       <Label text="Otomabil Modeli:" />
+                                       <Input id = "idNewCarModelMain"/>                                 
+                                   </VBox>
+                                   <VBox>
+                                     <Label text="Otomabil Özellikleri:" />
+                                     <TextArea id="idNewCarFeaturesMain" showExceededText="true" maxLength="200"  valueLiveUpdate="false" liveChange="handleLiveChange" />
+                                 </VBox>
+                                 <VBox>
+                                     <Label text="Otomabil Kiralama Süresi:" />
+                                     <ComboBox
+                                        id="idNewCarPeriodMain"
+                                        change="comboboxPeriodSelectId"
+                                        showSecondaryValues= "true"
+                                        items="{
+                                        path: '/rentalPeriodModel'
+
+                                        }">
+                                        <core:Item key="{period}" text="{periodText}" />
+                                    </ComboBox> 
+                                </VBox>
+                                <VBox>
+                                   <Label text="Kiralama Ücreti:" />
+                                   <Input type="Number" id = "idNewCArRentalFeeMain"/> 
+
+                               </VBox>
+                               <VBox>
+                                   <Label text="Otomabil Kiralama Durumu:" />
+                                   <ComboBox
+                                    id="idNewCarStateMain"
+                                    change="comboboxStateSelectId"
+                                    showSecondaryValues= "true"
+                                    items="{
+                                    path: '/stateCar'
+
+                                    }">
+                                    <core:Item key="{state}" text="{stateCarText}" />
+                                </ComboBox> 
+                            </VBox>
+                        </VBox>
+                    </f:content>
+                </f:SimpleForm>
+            </l:content>
+        </l:Grid>
+        <buttons>
+            <Button text = "CLOSE" press = "addNewCarDialogClose" type = "Reject"/>
+            <Button text = "ADD" press = "addNewCarToDB" type = "Accept"/>
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

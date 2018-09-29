@@ -1,0 +1,56 @@
+<mvc:View
+	height="100%"
+	controllerName="rentACar.CarRentalListing.controller.CarList"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page height="100%" enableScrolling="true" showHeader="false">
+		<HBox>
+			<HBox
+				alignItems="Start"
+				justifyContent="End">
+				<items>
+					<Button text="Yeni Araç Ekle"  type="Emphasized" class="sapUiSmallMarginEnd" press="newCarAdd" />
+				</items>
+			</HBox>
+		</HBox>
+		<List id="list1" items="{/carListModel}">
+			<CustomListItem>
+					<Image
+						id="imageIdCar"
+						src="{imageCarBase}"
+						width="80px"
+						height="80px" >
+					</Image>
+					<VBox>
+						<Label id="idBrandAndModel" text="{carBrand}-{carModel} " />
+						<HBox>
+							<Label text="Kiralama Durumu:"/>
+							<Label id="idCarRentalStatus" text="{carRentalStatus}"/>
+							<core:Icon
+								src="sap-icon://circle-task-2"
+								font-size="1.5rem"
+								color="{colorState}" >
+								<core:layoutData>
+									<FlexItemData growFactor="1" />
+								</core:layoutData>
+							</core:Icon>
+						</HBox>
+					</VBox>
+					<HBox
+						alignItems="Start"
+						justifyContent="End">
+						<items>
+							<Button text="Sil" type="Transparent" press="deleteCar"/>
+							<Button text="Düzenle" type="Transparent" press="editCar"/>
+						</items>
+					</HBox>
+			</CustomListItem>
+		</List>
+	</Page>
+</mvc:View>
+
+
+
+
+
