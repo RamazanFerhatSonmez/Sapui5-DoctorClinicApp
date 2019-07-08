@@ -1,4 +1,4 @@
-# Sapui5-RentACarApp
+# Sapui5-RentACarApp--Proje Görüntüleri
 JSON Model,websql
 Araba ekleme,araba güncelleme,kiralık araçları listeleme.
 SAyfa Yönlendirme,Sapui5 ile resim ekleme silme güncelleme(Model işlemleri ile)
